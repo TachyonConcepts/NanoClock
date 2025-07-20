@@ -5,6 +5,9 @@ edition = "2024"
 authors = ["Vladislav Feuerbach <feuerbachvladislav@gmail.com>"]
 description = "Ultra-fast and accurate nanosecond-level timing utilities"
 license = "MIT OR Apache-2.0"
+repository = "https://github.com/TachyonConcepts/NanoClock"
+readme = "README.md"
+keywords = ["time", "perfomance", "clock", "nanosecond", "date"]
 
 [dependencies]
 libc = { version = "0.2", features = ["extra_traits"] }

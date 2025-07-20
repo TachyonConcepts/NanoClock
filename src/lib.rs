@@ -1,7 +1,7 @@
 #![allow(unsafe_op_in_unsafe_fn)]
 
 use core::ptr;
-use libc::{clock_gettime, timespec, CLOCK_MONOTONIC};
+use libc::{CLOCK_MONOTONIC, clock_gettime, timespec};
 use std::arch::asm;
 
 //    Thanks to Howard Hinnant
@@ -412,10 +412,9 @@ pub fn nano_clock() -> (i32, u8, u8, u8, u8, u8, u8) {
 }
 
 #[inline(always)]
-pub fn nano_clock_asm() -> (i32, u8, u8, u8, u8, u8, u8)
-{
+pub fn nano_clock_asm() -> (i32, u8, u8, u8, u8, u8, u8) {
     let t: i64 = unsafe { timestamp() };
-    unsafe {_nano_clock_asm(t)}
+    unsafe { _nano_clock_asm(t) }
 }
 
 #[inline(always)]
