@@ -1,0 +1,17 @@
+[package]
+name = "nano_clock"
+version = "1.0.0"
+edition = "2024"
+authors = ["Vladislav Feuerbach <feuerbachvladislav@gmail.com>"]
+description = "Ultra-fast and accurate nanosecond-level timing utilities"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+libc = { version = "0.2", features = ["extra_traits"] }
+
+[profile.release]
+opt-level = 3
+codegen-units = 1
+lto = "fat"
+panic = "abort"
+incremental = false
